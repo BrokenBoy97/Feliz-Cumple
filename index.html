@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Feliz dia San.</title>
+    <style>
+      body {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      
+      /* Estilos CSS para el corazón que palpita */
+      .heart {
+        position: relative;
+        width: 420px;
+        height: 400px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .heart:before,
+      .heart:after {
+        position: absolute;
+        content: "";
+        left: 100px;
+        top: 0;
+        width: 100px;
+        height: 160px;
+        background: linear-gradient(to right, red, pink, red);
+        border-radius: 100px 100px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+        filter: blur(5px) brightness(2);
+      }
+
+      .heart:after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+        filter: blur(5px) brightness(2);
+      }
+
+      .heart-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 36px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 0px 0px 10px white;
+        mix-blend-mode: screen;
+        z-index: 1;
+      }
+
+      /* Estilos CSS para la animación de latido */
+      .heart-container {
+        display: inline-block;
+        position: relative;
+        animation: heartbeat 1s infinite;
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Estilos CSS para el cuadro de texto */
+      .tooltip {
+        visibility: hidden;
+        width: 300px;
+        max-height: 120px;
+        background-color: #f1f1f1;
+        color: #000;
+        text-align: justify;
+        border-radius: 6px;
+        padding: 10px;
+        font-style: italic;
+        position: static;
+        z-index: 2;
+      }
+
+      .heart:hover + .tooltip {
+        visibility: visible;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="heart-container">
+      <div class="heart">
+        <div class="heart-text">Feliz Cumpleaños San &#128156;</div>
+      </div>
+      <div class="tooltip">Hola san espero que este dia sea muy especial y que la pases muy bien, sabes que te quiero mucho y disfruto todos los momentos que pasamos alguna vez, este es un pequeño regalo que te tengo por el dia de tu cumpleaños, en verdad no se como logre hacerlo pero espero que te guste mucho...
+con love V.</div>
+    </
